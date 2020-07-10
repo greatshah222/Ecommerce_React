@@ -1,0 +1,93 @@
+.card {
+  cursor: pointer;
+  width: 300px;
+  height: 400px;
+  box-shadow: 3px 2px 2px 2px var(--mainBlue);
+  background-color: rgba(255, 255, 255, 0.575);
+}
+
+.middle {
+  transform: translate(10px, 10px);
+}
+.text {
+  display: flex;
+  width: 80%;
+  margin: 10px auto;
+  justify-content: space-between;
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  transition: transform 0.6s linear;
+}
+
+.front img {
+  height: 70%;
+  margin: 20px auto;
+}
+
+.back {
+  background: var(--mainBlue);
+  transform: perspective(300px) rotateY(180deg);
+}
+.front {
+  transform: perspective(300px) rotateY(0deg);
+}
+.backContent {
+  color: var(--mainWhite);
+  text-align: center;
+  width: 100%;
+}
+.sm {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.watchMore {
+  padding: 10px 10px;
+  font-size: 120%;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  background-color: var(--mainWhite);
+}
+.watchMore:hover {
+  background-color: var(--lightBlue);
+
+  color: var(--mainWhite);
+  transition: 0.2s ease-in-out;
+}
+/* // cart  */
+
+.cartIcon:hover {
+  transition: 0.3s ease-in-out;
+  color: var(--lightBlue);
+}
+.infoIcon {
+  margin-left: 90%;
+  margin-top: 10px;
+}
+.buttonCart {
+  padding: 10px 10px;
+  cursor: pointer;
+  background-color: var(--mainShadow);
+}
+
+.card:hover > .front {
+  transform: perspective(300px) rotateY(-180deg);
+}
+/* // itselect all the back child element which is inside the .card on hover */
+.card:hover > .back {
+  transform: perspective(300px) rotateY(0deg);
+}
+.detailInfo {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 60px;
+}

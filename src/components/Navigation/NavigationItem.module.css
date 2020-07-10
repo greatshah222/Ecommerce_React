@@ -1,0 +1,19 @@
+.NavigationItem a {
+  text-decoration: none;
+  color: var(--mainWhite);
+  font-size: 120%;
+  padding: 10px 15px;
+}
+.NavigationItem a:hover,
+.NavigationItem a:active {
+  background-color: var(--mainShadow);
+  border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+}
+/* .NavigationItem a:hover {
+  color: black;
+} */
+.NavigationItem a.active {
+  background-color: var(--mainShadow);
+  border-radius: 15px;
+}
