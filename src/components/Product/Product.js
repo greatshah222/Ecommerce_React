@@ -35,7 +35,7 @@ function Product(props) {
 
             <div className={classes.sm}>
               <button
-                onClick={() => console.log('object')}
+                onClick={props.setProductsHandler}
                 className={classes.buttonCart}
               >
                 {!inCart ? (
@@ -54,9 +54,12 @@ function Product(props) {
                   />
                 )}
               </button>
-              <Link to='/details' className={classes.watchMore}>
-                Watch More
-              </Link>
+              <button
+                className={classes.watchMore}
+                onClick={props.handleDetails}
+              >
+                <Link to='/details'>Watch More</Link>
+              </button>
             </div>
             <p>
               {' '}

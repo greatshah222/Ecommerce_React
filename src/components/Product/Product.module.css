@@ -52,9 +52,17 @@
   padding: 10px 10px;
   font-size: 120%;
   cursor: pointer;
-  text-decoration: none;
-  color: black;
+
   background-color: var(--mainWhite);
+}
+.watchMore a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+.watchMore a:hover {
+  color: var(--mainWhite);
+  transition: 0.2s ease-in-out;
 }
 .watchMore:hover {
   background-color: var(--lightBlue);

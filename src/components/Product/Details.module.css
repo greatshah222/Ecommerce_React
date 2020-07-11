@@ -1,0 +1,137 @@
+.Container_Primary {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px auto;
+}
+.Container_Details {
+  box-shadow: 10px 10px 10px var(--mainShadow);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 60vh;
+}
+.Container_Details_Secondary {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.Container_Details_Secondary p {
+  font-size: 120%;
+}
+.Container_Details_Secondary span {
+  margin-left: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.cartIcon:hover {
+  transition: 0.3s ease-in-out;
+  color: var(--lightBlue);
+}
+
+.buttonCart {
+  padding: 10px 10px;
+  cursor: pointer;
+  background-color: var(--mainShadow);
+}
+.Specification {
+  font-size: 130%;
+  font-weight: 600;
+}
+.Specification span {
+  font-weight: 400;
+  font-size: 90%;
+}
+
+.Summary {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h2 {
+  letter-spacing: 0.2px;
+
+  word-spacing: 2px;
+  font-size: 180%;
+  margin: 20px auto;
+  color: var(--mainBlue);
+}
+
+h2:after {
+  height: 4px;
+  display: block;
+  content: '';
+  width: 100px;
+  background-color: var(--mainBlue);
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.BuyNow {
+  padding: 10px 25px;
+  font-size: 120%;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--mainWhite);
+  background-color: var(--mainBlue);
+}
+.BuyNow:hover {
+  background-color: var(--mainWhite);
+  border: 1px solid var(--mainBlue);
+
+  color: var(--mainBlue);
+  transition: 0.2s ease-in-out;
+}
+.BackToProducts {
+  padding: 10px 25px;
+  font-size: 120%;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--mainBlue);
+  background-color: var(--mainWhite);
+  border: 1px solid var(--mainBlue);
+}
+.BackToProducts:hover {
+  background-color: var(--mainBlue);
+
+  color: var(--mainWhite);
+  transition: 0.2s ease-in-out;
+}
+@media (max-width: 1024px) {
+  .Container_Primary {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px auto;
+  }
+  .Container_Details {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 840px) {
+  .Container_Primary {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Container_Image {
+    justify-self: center;
+    align-self: center;
+  }
+  .Container_Details {
+    margin-top: 50px;
+    height: 80vh;
+    box-shadow: 1px 1px 10px var(--mainShadow);
+  }
+}

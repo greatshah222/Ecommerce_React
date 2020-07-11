@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
-import { storeProducts } from '../../data';
+import React, { useState, useEffect } from 'react';
+import { storeProducts, detailProduct } from '../../data';
 
 export const ProductContext = React.createContext();
 
 const ProductContextProvider = (props) => {
   const [products, setProducts] = useState(storeProducts);
-  const [detailProducts, setDetailProducts] = useState(storeProducts);
+  const [detailProducts, setDetailProducts] = useState();
+  const [cart, setCart] = useState([]);
+  // useEffect(() => {
+  //   let products = [];
+  //   storeProducts.forEach((el) => {
+  //     const singleItem = { ...el };
+  //     products = [...products, singleItem];
+  //   });
+  //   setProducts(products);
+  // }, []);
+  // console.log(products);
   return (
     <ProductContext.Provider
       // double curly bracket cause it is an object
@@ -14,6 +24,8 @@ const ProductContextProvider = (props) => {
         setDetailProducts: setDetailProducts,
         detailProducts: detailProducts,
         setProducts: setProducts,
+        cart,
+        setCart,
       }}
     >
       {props.children}
