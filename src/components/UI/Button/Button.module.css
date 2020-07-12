@@ -1,0 +1,58 @@
+/* // removing links decoraation if it is inside the btn */
+
+.Button a {
+  text-decoration: none;
+  color: inherit;
+}
+.Button {
+  padding: 10px 25px;
+  font-size: 120%;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--mainBlue);
+  background-color: var(--mainWhite);
+  height: 100%;
+}
+.Button:hover {
+  background-color: var(--mainBlue);
+  border: 1px solid var(--mainWhite);
+
+  color: var(--mainWhite);
+  transition: 0.2s ease-in-out;
+}
+.Primary {
+  color: var(--mainWhite);
+  background-color: var(--mainBlue);
+}
+.Primary:hover {
+  color: var(--mainBlue);
+  background-color: var(--mainWhite);
+  border: 1px solid var(--mainBlue);
+  transition: 0.2s ease-in-out;
+}
+.Danger {
+  color: red;
+  background-color: var(--mainWhite);
+  border: 1px solid red;
+}
+.Danger:hover {
+  color: var(--mainWhite);
+  background-color: red;
+  border: 1px dashed var(--mainWhite);
+}
+@media (max-width: 600px) {
+  .Button {
+    padding: 10px 10px;
+  }
+}
+@media (max-width: 400px) {
+  .Button {
+    padding: 7px 7px;
+  }
+}
+@media (min-width: 200px) {
+  .Button {
+    padding: 10px 10px;
+  }
+}

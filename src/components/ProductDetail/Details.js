@@ -7,6 +7,7 @@ import { faCartPlus, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Modal from '../UI/Modal/Modal';
 import CartAddedSummary from '../Summary/CartAdded/CartAddedSummary';
+import Button from '../UI/Button/Button';
 function Details() {
   const {
     products,
@@ -107,11 +108,11 @@ function Details() {
                 />
               )}
             </button>
-            <Link to='/' className={classesDetail.BuyNow}>
-              Buy Now
+            <Link to='/cart'>
+              <Button>Buy Now</Button>
             </Link>
-            <Link to='/' className={classesDetail.BackToProducts}>
-              Back To Products
+            <Link to='/'>
+              <Button btnType='Primary'>Back To Products</Button>
             </Link>
           </div>
         </div>

@@ -7,6 +7,7 @@ import {
   faCartArrowDown,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import Button from '../UI/Button/Button';
 
 function Product(props) {
   const { title, price, img, company, summary, inCart } = props.product;
@@ -54,12 +55,9 @@ function Product(props) {
                   />
                 )}
               </button>
-              <button
-                className={classes.watchMore}
-                onClick={props.handleDetails}
-              >
-                <Link to='/details'>Watch More</Link>
-              </button>
+              <Link to='/details'>
+                <Button clicked={props.handleDetails}>Watch More</Button>
+              </Link>
             </div>
             <p>
               {' '}

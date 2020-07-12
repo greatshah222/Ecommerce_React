@@ -48,6 +48,7 @@
 }
 
 .Summary {
+  margin-top: 30px;
   display: flex;
   width: 100%;
   justify-content: space-evenly;
@@ -73,38 +74,7 @@ h2:after {
   margin-left: auto;
   margin-right: auto;
 }
-.BuyNow {
-  padding: 10px 25px;
-  font-size: 120%;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--mainWhite);
-  background-color: var(--mainBlue);
-}
-.BuyNow:hover {
-  background-color: var(--mainWhite);
-  border: 1px solid var(--mainBlue);
 
-  color: var(--mainBlue);
-  transition: 0.2s ease-in-out;
-}
-.BackToProducts {
-  padding: 10px 25px;
-  font-size: 120%;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--mainBlue);
-  background-color: var(--mainWhite);
-  border: 1px solid var(--mainBlue);
-}
-.BackToProducts:hover {
-  background-color: var(--mainBlue);
-
-  color: var(--mainWhite);
-  transition: 0.2s ease-in-out;
-}
 @media (max-width: 1024px) {
   .Container_Primary {
     width: 90%;
@@ -133,5 +103,63 @@ h2:after {
     margin-top: 50px;
     height: 80vh;
     box-shadow: 1px 1px 10px var(--mainShadow);
+  }
+}
+@media (max-width: 450px) {
+  .Container_Primary {
+    width: 100vw;
+  }
+  .Container_Details {
+    box-shadow: 10px 10px 10px var(--mainShadow);
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 90vh;
+  }
+  .Container_Details_Secondary p {
+    font-size: 100%;
+  }
+  .Specification {
+    font-size: 120%;
+    font-weight: 600;
+    margin: 20px;
+  }
+  .Specification span {
+    font-weight: 400;
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 350px) {
+  .Container_Primary {
+    width: 100vw;
+  }
+  .Container_Details {
+    box-shadow: 10px 10px 10px var(--mainShadow);
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+  }
+  .Container_Details_Secondary p {
+    font-size: 100%;
+  }
+  .Specification {
+    font-size: 120%;
+    font-weight: 600;
+    padding: 30px 10px 0px 30px;
+    /* margin: 30px 50px 0px 50px; */
+  }
+  .Specification span {
+    font-weight: 400;
+    font-size: 80%;
+  }
+  .Summary {
+    width: 90%;
+    margin: 10px 10px 10px 50px;
   }
 }

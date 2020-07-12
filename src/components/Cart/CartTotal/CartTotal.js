@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../context/ProductContext';
 import classes from './CartTotal.module.css';
-import { Link } from 'react-router-dom';
-import { PaypalBtn } from 'react-paypal-checkout';
 import PaypalButton from '../../Payment/PaypalButton';
+import Button from '../../UI/Button/Button';
 
 function CartTotal(props) {
   const { cart } = useContext(ProductContext);
@@ -20,12 +19,10 @@ function CartTotal(props) {
     <>
       <div className={classes.ClearCart}>
         {/* // we have to life the props cause we want to redirrect user and props location is available only to direct entity of route */}
-        <button
-          onClick={props.clearCartHandler}
-          className={`${classes.CheckoutButton} ${classes.ClearButton}`}
-        >
+
+        <Button btnType='Danger' clicked={props.clearCartHandler}>
           Clear Cart
-        </button>
+        </Button>
       </div>
 
       <div className={classes.CardTotalPrimary}>
@@ -49,9 +46,6 @@ function CartTotal(props) {
             total={total}
             clearCartHandler={props.clearCartHandler}
           ></PaypalButton>
-          {/* <Link to='/' className={classes.CheckoutButton}>
-            Checkout
-          </Link> */}
         </div>
       </div>
     </>

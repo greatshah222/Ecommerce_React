@@ -74,6 +74,7 @@ function Products() {
   const modalClickHanlder = () => {
     setShowModal(false);
   };
+
   let prod = null;
   if (products) {
     prod = products.map((el) => (

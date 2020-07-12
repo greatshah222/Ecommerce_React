@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import classes from './CartAddedSummary.module.css';
+import Button from '../../UI/Button/Button';
 
 function CartAddedSummary(props) {
   let content = null;
@@ -18,19 +19,14 @@ function CartAddedSummary(props) {
           <h4> Product: {title}</h4>
           <h4>Price: {price} €</h4>
           <div className={classes.LinkSummary}>
-            <Link
-              to='/cart'
-              className={classes.BuyNow}
-              onClick={props.modalClickHanlder}
-            >
-              Buy Now
+            <Link to='/cart'>
+              <Button btnType='Primary' clicked={props.modalClickHanlder}>
+                {' '}
+                Buy Now
+              </Button>
             </Link>
-            <Link
-              to='/'
-              className={classes.ContinueShopping}
-              onClick={props.modalClickHanlder}
-            >
-              Continue Shopping
+            <Link to='/'>
+              <Button clicked={props.modalClickHanlder}>Add More</Button>
             </Link>
           </div>
         </div>

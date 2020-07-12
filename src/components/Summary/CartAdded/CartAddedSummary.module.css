@@ -11,41 +11,6 @@
   grid-gap: 20px;
 }
 
-.BuyNow {
-  font-size: 120%;
-  padding: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--mainWhite);
-  background-color: var(--mainBlue);
-  text-align: center;
-}
-.BuyNow:hover {
-  background-color: var(--mainWhite);
-  border: 1px solid var(--mainBlue);
-
-  color: var(--mainBlue);
-  transition: 0.2s ease-in-out;
-}
-.ContinueShopping {
-  padding: 6px;
-  text-align: center;
-
-  font-size: 120%;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--mainBlue);
-  background-color: var(--mainWhite);
-  border: 1px solid var(--mainBlue);
-}
-.ContinueShopping:hover {
-  background-color: var(--mainBlue);
-
-  color: var(--mainWhite);
-  transition: 0.2s ease-in-out;
-}
 .CloseButton {
   font-size: 50px;
   color: #ccc;
@@ -55,10 +20,4 @@
 }
 .CloseButton:hover {
   color: black;
-}
-@media (max-width: 750px) {
-  .BuyNow,
-  .ContinueShopping {
-    padding: 5.3px;
-  }
 }
