@@ -1,0 +1,39 @@
+.SideBar {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: var(--mainWhite);
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-out;
+}
+.closeSideBarIcon {
+  display: flex;
+  font-size: 5rem;
+  color: var(--mainShadow);
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.closeSideBarIcon:hover {
+  color: var(--mainBlue);
+}
+.Open {
+  transform: translateX(0);
+}
+.Close {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 499px) {
+  .SideBar {
+    display: none;
+  }
+}

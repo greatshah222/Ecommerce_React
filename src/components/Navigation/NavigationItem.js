@@ -4,7 +4,7 @@ import classes from './NavigationItem.module.css';
 
 function NavigationItem(props) {
   return (
-    <li className={classes.NavigationItem}>
+    <li className={classes.NavigationItem} onClick={props.closeSideBar}>
       <NavLink activeClassName={classes.active} exact to={props.link}>
         {props.children}
       </NavLink>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Modal from '../UI/Modal/Modal';
 import CartAddedSummary from '../Summary/CartAdded/CartAddedSummary';
 import Button from '../UI/Button/Button';
-function Details() {
+function Details(props) {
   const {
     products,
     setProducts,
@@ -65,6 +65,22 @@ function Details() {
   const modalClickHanlder = () => {
     setShowModal(false);
   };
+  // when user click buy now from the details page ot will be added to the cart and they will be redirected to cart page directly
+  const BuyNowAndAddToCartHandler = (id) => {
+    const product = Object.values(products).find((el) => el.id === id);
+    const index = products.indexOf(product);
+    const productsClone = [...products];
+    const singleProduct = { ...productsClone[index] };
+    singleProduct.cart = !singleProduct.cart;
+    singleProduct.total = singleProduct.price;
+    singleProduct.count += 1;
+    productsClone[index] = singleProduct;
+    setProducts(productsClone);
+    setCart([...cart, singleProduct]);
+    props.history.push('/cart');
+    // props.location.push('/cart');
+  };
+
   if (detailProducts) {
     const { company, img, info, price, inCart, title, id } = detailProducts;
     finalValue = (
@@ -108,9 +124,11 @@ function Details() {
                 />
               )}
             </button>
-            <Link to='/cart'>
-              <Button>Buy Now</Button>
-            </Link>
+
+            <Button clicked={() => BuyNowAndAddToCartHandler(id)}>
+              Buy Now
+            </Button>
+
             <Link to='/'>
               <Button btnType='Primary'>Back To Products</Button>
             </Link>
@@ -119,6 +137,8 @@ function Details() {
       </div>
     );
   }
+  //
+
   return (
     <>
       {finalValue}

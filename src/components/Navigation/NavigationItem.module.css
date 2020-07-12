@@ -17,3 +17,24 @@
   background-color: var(--mainShadow);
   border-radius: 15px;
 }
+
+@media (max-width: 499px) {
+  .NavigationItem a {
+    color: var(--mainBlue);
+    font-size: 140%;
+    padding: 10px 45px;
+    font-weight: 400;
+    border: 1px solid var(--mainBlue);
+    border-radius: 15px;
+  }
+  .NavigationItem a:hover,
+  .NavigationItem a:active {
+    background-color: var(--mainBlue);
+    color: var(--mainWhite);
+  }
+
+  .NavigationItem a.active {
+    background-color: var(--mainBlue);
+    color: var(--mainWhite);
+  }
+}
