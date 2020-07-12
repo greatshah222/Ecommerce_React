@@ -3,8 +3,7 @@ import { ProductContext } from '../context/ProductContext';
 import classes from './Cart.module.css';
 import Cart from './Cart';
 import CartTotal from './CartTotal/CartTotal';
-import { storeProducts } from '../../data';
-function Carts() {
+function Carts(props) {
   const {
     cart,
     setCart,
@@ -84,12 +83,11 @@ function Carts() {
     cloneProducts[index1] = singleProduct;
     setProducts(cloneProducts);
   };
-
   // deleting the whole cart
   const clearCartHandler = () => {
     setCart([]);
     setProducts((prevstate) => cloneStoreProducts());
-    console.log(products);
+    props.history.push('/');
   };
   if (cart) {
     content = cart.map((el) => (
