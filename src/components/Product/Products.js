@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import classes from './Products.module.css';
 import { ProductContext } from '../context/ProductContext';
 import Product from './Product';
+import Modal from '../UI/Modal/Modal';
+import CartAddedSummary from '../Summary/CartAdded/CartAddedSummary';
 
 function Products() {
   const {
@@ -10,7 +12,12 @@ function Products() {
     setDetailProducts,
     cart,
     setCart,
+    cartProductSummary,
+    setCartProductSummary,
+    showModal,
+    setShowModal,
   } = useContext(ProductContext);
+  // for showing modal
 
   const setProductsHandler = (id) => {
     let product = Object.values(products).find((el) => el.id === id);
@@ -25,9 +32,16 @@ function Products() {
       const price = singleproduct.price;
       singleproduct.total = price;
       singleproduct.count = 1;
+
       productsClone[index] = singleproduct;
+
       // setting to cart array in state
       setCart([...cart, singleproduct]);
+
+      // for showimg summary modal
+      setCartProductSummary(singleproduct);
+      // showing modal
+      setShowModal(true);
     }
     //removing  count - to cart while removing from cart
     else {
@@ -50,6 +64,10 @@ function Products() {
     let product = Object.values(products).find((el) => el.id === id);
     setDetailProducts(product);
   };
+  // closing modal when clicked button
+  const modalClickHanlder = () => {
+    setShowModal(false);
+  };
   let prod = null;
   if (products) {
     prod = products.map((el) => (
@@ -61,7 +79,6 @@ function Products() {
       />
     ));
   }
-
   return (
     <>
       <div className={classes.container}>
@@ -69,6 +86,12 @@ function Products() {
       </div>
 
       <div className={classes.Products_List}>{prod}</div>
+      <Modal show={showModal} backDropClose={modalClickHanlder}>
+        <CartAddedSummary
+          cartProductSummary={cartProductSummary}
+          modalClickHanlder={modalClickHanlder}
+        />
+      </Modal>
     </>
   );
 }

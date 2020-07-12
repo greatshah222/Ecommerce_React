@@ -1,0 +1,54 @@
+.CardTotalPrimary {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 50px auto 50px auto;
+}
+.CardTotalSecondary {
+  border: 2px solid var(--lightBlue);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35vh;
+}
+
+.CardTotalSecondaryParagraph {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+  align-items: center;
+  font-size: 110%;
+}
+.CheckoutButton {
+  width: 80%;
+  margin: 20px auto 0 auto;
+  padding: 10px 25px;
+  font-size: 120%;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--mainWhite);
+  background-color: var(--mainBlue);
+  text-align: center;
+}
+.CheckoutButton:hover {
+  background-color: var(--mainWhite);
+  border: 1px solid var(--mainBlue);
+
+  color: var(--mainBlue);
+  transition: 0.2s ease-in-out;
+}
+.ClearCart {
+  width: 30%;
+  margin-left: 61%;
+}
+.ClearButton {
+  background-color: inherit;
+  color: red;
+  border: 1px solid red;
+}
+.ClearButton:hover {
+  background-color: red;
+  color: white;
+}

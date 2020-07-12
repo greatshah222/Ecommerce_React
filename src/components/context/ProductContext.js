@@ -1,31 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { storeProducts, detailProduct } from '../../data';
+import { storeProducts } from '../../data';
 
 export const ProductContext = React.createContext();
 
 const ProductContextProvider = (props) => {
-  const [products, setProducts] = useState(storeProducts);
+  const [products, setProducts] = useState([]);
   const [detailProducts, setDetailProducts] = useState();
   const [cart, setCart] = useState([]);
-  // useEffect(() => {
-  //   let products = [];
-  //   storeProducts.forEach((el) => {
-  //     const singleItem = { ...el };
-  //     products = [...products, singleItem];
-  //   });
-  //   setProducts(products);
-  // }, []);
-  // console.log(products);
+  const [cartProductSummary, setCartProductSummary] = useState();
+  const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    cloneStoreProducts();
+  }, []);
+  // we have to destructure the main storeProduct else we will mutate the original one i.e storeProduct
+  const cloneStoreProducts = () => {
+    let products = [];
+    storeProducts.forEach((el) => {
+      const singleItem = { ...el };
+      products = [...products, singleItem];
+    });
+    setProducts(products);
+  };
   return (
     <ProductContext.Provider
       // double curly bracket cause it is an object
       value={{
         products: products,
-        setDetailProducts: setDetailProducts,
-        detailProducts: detailProducts,
-        setProducts: setProducts,
+        setDetailProducts,
+        detailProducts,
+        setProducts,
         cart,
         setCart,
+        cartProductSummary,
+        setCartProductSummary,
+        showModal,
+        setShowModal,
+        cloneStoreProducts,
       }}
     >
       {props.children}

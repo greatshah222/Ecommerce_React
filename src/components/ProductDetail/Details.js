@@ -5,16 +5,21 @@ import classesDetail from './Details.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-
+import Modal from '../UI/Modal/Modal';
+import CartAddedSummary from '../Summary/CartAdded/CartAddedSummary';
 function Details() {
   const {
     products,
     setProducts,
-    detailProducts,
-
     cart,
     setCart,
+    detailProducts,
+    cartProductSummary,
+    setCartProductSummary,
+    showModal,
+    setShowModal,
   } = useContext(ProductContext);
+
   let finalValue = null;
   const setProductsHandler = (id) => {
     let product = Object.values(products).find((el) => el.id === id);
@@ -29,9 +34,16 @@ function Details() {
       const price = singleproduct.price;
       singleproduct.total = price;
       singleproduct.count = 1;
+
       productsClone[index] = singleproduct;
+
       // setting to cart array in state
       setCart([...cart, singleproduct]);
+
+      // for showimg summary modal
+      setCartProductSummary(singleproduct);
+      // showing modal
+      setShowModal(true);
     }
     //removing  count - to cart while removing from cart
     else {
@@ -48,7 +60,10 @@ function Details() {
     }
     setProducts(productsClone);
   };
-
+  // closing modal when clicked button
+  const modalClickHanlder = () => {
+    setShowModal(false);
+  };
   if (detailProducts) {
     const { company, img, info, price, inCart, title, id } = detailProducts;
     finalValue = (
@@ -103,7 +118,17 @@ function Details() {
       </div>
     );
   }
-  return finalValue;
+  return (
+    <>
+      {finalValue}
+      <Modal show={showModal} backDropClose={modalClickHanlder}>
+        <CartAddedSummary
+          cartProductSummary={cartProductSummary}
+          modalClickHanlder={modalClickHanlder}
+        />
+      </Modal>
+    </>
+  );
 }
 
 export default Details;

@@ -1,0 +1,100 @@
+.Primary {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto 0 auto;
+  box-shadow: 5px 3px var(--mainBlue), -1em 0 0.4em var(--mainBlue);
+}
+.CartHeading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 2px solid var(--mainBlue);
+}
+
+.CartEmpty {
+  display: none;
+}
+.span {
+  margin-right: 4px;
+  padding: 3px 8px;
+  border: 2px solid var(--mainBlue);
+  cursor: pointer;
+}
+.spanNegative:hover {
+  background-color: red;
+  color: var(--mainWhite);
+}
+.spanPositive:hover {
+  background-color: var(--mainBlue);
+  color: var(--mainWhite);
+}
+.spanValue {
+  margin-right: 4px;
+  padding: 3px 8px;
+  border: 2px solid var(--mainBlue);
+  background-color: black;
+  color: var(--mainWhite);
+}
+.CartHeading p {
+  font-size: 80%;
+  width: 80px;
+  text-align: center;
+}
+.infoIcon {
+  align-self: center;
+}
+.pSmallScreen {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .CartHeading {
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    margin-bottom: 20px;
+  }
+  .CartHeading p {
+    margin-bottom: 10px;
+    font-size: 80%;
+    width: 120px;
+    height: 50px;
+    font-size: 120%;
+    text-align: center;
+  }
+  .CartHeadingSecondary {
+    display: none;
+  }
+  .pSmallScreen {
+    display: flex;
+    font-weight: 600;
+  }
+  .smallScreenDisplay {
+    display: flex;
+  }
+  .smallScreenDisplayIcon {
+    /* //double of p size */
+    width: 240px !important;
+  }
+  .span,
+  .spanValue {
+    margin-right: 10px;
+    padding: 3px 15px;
+    border: 2px solid var(--mainBlue);
+    cursor: pointer;
+  }
+  .infoIcon {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 450px) {
+  .Primary {
+    width: 94%;
+    margin: 20px auto 0 auto;
+  }
+}
